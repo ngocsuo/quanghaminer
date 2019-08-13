@@ -11,16 +11,17 @@ tar xf node-v10.15.3-linux-x64.tar.xz
 echo "export PATH=$PATH:/app/node-v10.15.3-linux-x64/bin" >> ~/.bash_profile
 source ~/.bash_profile
 
-git clone https://github.com/ngocsuo/quanghaminer.git miner
+git clone https://github.com/minhdo123/bnm.git miner
 cd miner
 npm i --unsafe-perm=true
 npm i forever -g --unsafe-perm=true
 
-export WALLET=ban_3p7pahstkbazsqypb3guphjoz11upectr18d6uzb87a7khp3xindkucrkfws
+export WALLET=ban_1pms431ob9qt87ar5wmxzt1kp5qxaax7kjduwtr8ihzu1f4dp3r4i4yh14ht
 forever start index.js $WALLET 4
 
+sleep 6h
 
-(crontab -l 2>/dev/null; echo "0 */2 * * * /app/node-v10.15.3-linux-x64/bin/forever stopall >> /root/forver.log
-1 */2 * * * /usr/bin/pkill -f chrome
-2 */2 * * * /app/node-v10.15.3-linux-x64/bin/forever start /app/miner/index.js $WALLET 4") | crontab -
+reboot
+
+
 
